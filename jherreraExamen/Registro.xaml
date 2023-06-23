@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jherreraExamen.Registro">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EstiloSL" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="Snow"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Registro" FontSize="18" HorizontalOptions="Center"/>
+            <Label x:Name="lblUsuario" HorizontalOptions="End"/>
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Fecha" FontSize="18" Grid.Row="0" Grid.Column="0" />
+                <DatePicker  x:Name="dpFecha" Date="06/22/2023" Format="M/dd/yyyy" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Pais" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="Ciudad" FontSize="18" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="Monto Inicial" FontSize="18" Grid.Row="3" Grid.Column="0"/>
+                <Label Text="Pago Mensual" FontSize="18" Grid.Row="4" Grid.Column="0"/>
+                <Picker Title="Pais" x:Name="pkPais" Grid.Row="1" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Peru</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Bolivia</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker Title="Ciudad" x:Name="pkCiudad" Grid.Row="2" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Quito</x:String>
+                        <x:String>Cusco</x:String>
+                        <x:String>Bogota</x:String>
+                        <x:String>La Paz</x:String>
+                    </Picker.Items>
+                </Picker>
+                    <Entry x:Name="txtMontoInicial" Placeholder="Ingrese su Monto Inicial" Grid.Row="3" Grid.Column="1" Keyboard="Numeric"/>
+                <Entry x:Name="txtPagoMensual" Placeholder="Su Pago Mensual es:" Grid.Row="4" Grid.Column="1" IsReadOnly="True"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre" FontSize="18" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Apellido" FontSize="18" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Edad" FontSize="18" Grid.Row="0" Grid.Column="2"/>
+                <Entry x:Name="txtNombre" Placeholder="Nombre" Grid.Row="1" Grid.Column="0"/>
+                <Entry x:Name="txtApellido" Placeholder="Apellido" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="txtEdad" Placeholder="Edad" Grid.Row="1" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnPagoM" Text="Calcular P.Mensual" Clicked="btnPagoM_Clicked" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="btnResumen" Text="Mostrar Resumen" Clicked="btnResumen_Clicked" Grid.Row="0" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
